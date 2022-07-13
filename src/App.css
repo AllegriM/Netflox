@@ -1,38 +1,61 @@
-.App {
+.App,
+#root,
+body {
+  height: 100%;
   text-align: center;
+  background-color: #141414;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  position: relative;
+  z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-background::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(imgs/bg-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-blend-mode: multiply; */
+  opacity: 0.3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.icon-svg{
+  padding: 2em;
+}
+
+span{
+  display: inline-block;
+  cursor: pointer;
+}
+
+span:hover{
+  text-decoration: underline;
+}
+/* <button className="form-btns" mt='1em'>Iniciar sesión</button> */
+
+.suscribe{
+  color:'white';
+  cursor:'pointer';
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.more-info{
+  color: #0071eb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-btns{
+  /* display: block; */
+  margin: .65em 0;
+  background-color: #DB0000;
+  width: 100%;
+  padding: .65rem;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700; 
 }
