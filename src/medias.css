@@ -1,0 +1,41 @@
+    /* 
+    < 20rem
+    30rem
+    37.5rem
+    48rem
+    56.25rem
+    64 rem
+    > 75 rem
+    */
+
+    .responsive-categories {
+        display: none !important;
+    }
+
+    @media screen and (max-width: 56.25rem) {
+        .nav-bar ul {
+            display: none
+        }
+    }
+
+    @media screen and (max-width: 64rem) {
+        .nav-bar ul {
+            display: none;
+            font-size: .5rem;
+        }
+        .responsive-categories {
+            display: block !important;
+        }
+    }
+
+    @media screen and (min-width: 64rem) and (max-width: 75rem) {
+        .nav-bar ul {
+            font-size: .85rem;
+        }
+    }
+
+    @media screen and (min-width: 75rem) {
+        .nav-bar ul {
+            font-size: .85rem;
+        }
+    }

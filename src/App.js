@@ -4,6 +4,7 @@ import Login from 'pages/Login/Login';
 import { Routes, Route} from "react-router-dom";
 
 import './App.css';
+import './medias.css';
 
 function App() {
 
