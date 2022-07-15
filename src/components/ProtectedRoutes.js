@@ -4,7 +4,6 @@ import { Navigate, Outlet } from "react-router-dom"
 
 function ProtectedRoutes() {
     const { user, loggedIn }= useContext(AuthContext)
-    console.log(user, loggedIn)
     return (user !== null & loggedIn) ? <Outlet /> : <Navigate to='/' />
 }
 

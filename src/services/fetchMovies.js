@@ -1,18 +1,29 @@
-import { API_URL, API_KEY } from "./API_DATA"
+import { API_URL, API_KEY } from "data/API_DATA"
 
+async function fetchMovies( keyword ) {
+    // Desestructuring data
 
-
-async function fetchMovies() {
-    // Getting data from the MOVIES API
-    try{
-        let data =  await fetch(`${API_URL}/movie/550?api_key=${API_KEY}`)
-        let response = data.json()
-        return response
+    const specificMovieData = (apiResponse) => {
+        if (Array.isArray(apiResponse)) {
+            const movies = apiResponse.map(movie => {
+                const { poster_path, backdrop_path } = movie;
+                const url_image_poster = `https://image.tmdb.org/t/p/original/${poster_path}`
+                const url_image_backdrop = `https://image.tmdb.org/t/p/original/${backdrop_path}`
+                return { ...movie, url_image_poster, url_image_backdrop }
+            })
+            return movies
+        }
     }
-    catch(error){
-        console.log(error)
-    }        
     
+    // Getting data from the MOVIES API
+
+    try {
+        return await fetch(`${API_URL}/movie/${keyword}?api_key=${API_KEY}`)
+            .then(resp => resp.json())
+            .then(data => specificMovieData(data.results))
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 export default fetchMovies

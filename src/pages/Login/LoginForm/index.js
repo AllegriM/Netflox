@@ -15,7 +15,6 @@ function LoginFormFormik( {displayLogin} ) {
     const { register, handleSubmit, formState: { errors }  } = useForm()
     const onSubmit = values => {
         setIsSubmitting(false)
-        console.log(values)
         logIn(values.username, values.password);
     }
     

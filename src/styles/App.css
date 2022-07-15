@@ -25,6 +25,24 @@ body {
   opacity: 0.3;
 }
 
+.nav-bar{
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+  padding-right: 2rem;
+  background-color: transparent;
+  transition: .5s ease all;
+}
+
+.hide-navbar{
+  background-color: #141414 !important;
+  transition: .5s ease all;
+}
+
 .icon-svg{
   padding: 2em;
 }
@@ -132,4 +150,37 @@ form input::placeholder{
 .avatar-button:hover .avatar-arrow{
   transition: .3s ease all;
   transform: rotate(180deg);
+}
+
+.movie-list::-webkit-scrollbar {
+  display: none;
+}
+
+.category-img{
+  max-height: 12rem;
+  object-fit: contain;
+  transition: 0.5s ease all;
+  cursor: pointer;
+}
+
+.category-img:hover{
+  transform: scale(1.1);
+  z-index: 100;
+}
+
+.movie-banner-img{
+  object-fit: contain !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.movie-banner::after{
+  content: '';
+  position: absolute;
+  height: 200px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }

@@ -1,10 +1,10 @@
 import ProtectedRoutes from 'components/ProtectedRoutes';
-import Home from 'pages/Home/Home';
+import Home from 'pages/Home';
 import Login from 'pages/Login/Login';
 import { Routes, Route} from "react-router-dom";
 
-import './App.css';
-import './medias.css';
+import 'styles/App.css';
+import 'styles/medias.css';
 
 function App() {
 

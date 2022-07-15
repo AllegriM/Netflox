@@ -1,9 +1,9 @@
 import { Avatar, Button, ListItem, Menu, MenuButton, MenuItem, MenuList, Stack, Text, UnorderedList } from "@chakra-ui/react"
-import Icon from "components/Icon"
+import Icon from "components/ui/Icon"
 import { FaSearch, FaBell } from 'react-icons/fa'
 import { BsFillCaretDownFill } from "react-icons/bs"
 import { theme } from "theme"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "context/AuthContext"
 
 function Navbar() {
@@ -11,8 +11,23 @@ function Navbar() {
     const [openSearchInput, setOpenSearchInput] = useState(false)
     const { logOut } = useContext(AuthContext)
 
+    const [show, setShow] = useState(false)
+
+    const hideNavBar = () => {
+        if (window.scrollY > 100){
+            setShow(true)
+        }else{
+            setShow(false)
+        }   
+    }
+
+    useEffect(()=> {
+        window.addEventListener("scroll", hideNavBar)
+        return () => window.addEventListener("scroll", hideNavBar)
+    },[show])
+
     return (
-        <Stack className="nav-bar" direction='row' align='center' justify='space-between' w='100%' pr='2rem' backgroundColor='transparent'>
+        <nav className={`nav-bar ${show ? 'hide-navbar' : ''}`}>
             <Stack className="nav-left" direction='row' align='center'>
                 <Icon />
                 <Menu>
@@ -92,7 +107,7 @@ function Navbar() {
 
                 </Stack>
             </Stack>
-        </Stack>
+        </nav>
     )
 }
 

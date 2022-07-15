@@ -16,7 +16,6 @@ function RegisterFormFormik( {displayLogin} ) {
     
     const onSubmit = values => {
         setIsSubmitting(false)
-        console.log(values)
         signUp(values.username, values.password, values.FirstName);
     }
     
@@ -26,7 +25,7 @@ function RegisterFormFormik( {displayLogin} ) {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input 
                     name = 'FirstName'
-                    placeholder="Email o número de teléfono" 
+                    placeholder="Nombre" 
                     type='FirstName'
                     className= {`inputField  ${errors.FirstName ? 'input-error' : ''}`}  
                     {...register("FirstName", {

@@ -1,8 +1,8 @@
 import { Stack } from '@chakra-ui/react'
-import LoginFormFormik from 'components/LoginForm'
+import LoginFormFormik from 'pages/Login/LoginForm'
 import { useState } from 'react'
-import RegisterFormFormik from 'components/RegisterFormHook'
-import Icon from 'components/Icon'
+import RegisterFormFormik from 'pages/Login/RegisterForm'
+import Icon from 'components/ui/Icon'
 
 function Login() {
 

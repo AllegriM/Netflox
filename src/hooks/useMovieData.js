@@ -1,15 +1,17 @@
-// import { useState } from "react"
+import { useEffect, useState } from "react"
+import fetchMovies from "services/fetchMovies"
 
 
+function useMovieData({ keyword = "popular" }) {
 
-// function useMovieData( request ) {
+    const [movies, setMovies] = useState([])
 
-//     const [state, setState] = useState()
+    useEffect(() => {
+        fetchMovies(keyword)
+            .then(movies => setMovies(movies))
+    }, [])
 
-//     fetch(`${API_URL}/movie/550?api_key=${API_KEY}`)
+    return movies
+}
 
-
-//     return ()
-// }
-
-// export default useMovieData
+export default useMovieData
