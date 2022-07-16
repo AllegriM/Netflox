@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react"
 import Category from "./Category"
+import GenreCategory from "./GenreCategory"
 
 const MoviesCategories = () => {
 
@@ -8,6 +9,7 @@ const MoviesCategories = () => {
             <Category title='Populares en Netflix' keyword='popular' />
             <Category title='Tendencias' keyword='top_rated' />
             <Category title='Por estrenarse...' keyword='upcoming' />
+            <GenreCategory title='Accion' keyword='28' />
         </Container>
     )
 }

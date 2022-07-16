@@ -184,3 +184,22 @@ form input::placeholder{
   left: 0;
   background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }
+
+.button-banner-icons{
+  margin-right: .5em;
+}
+
+/* Styling slider buttons */
+
+.swiper-button-next{
+  position: absolute;
+  right: -20px; 
+  z-index: 99;
+
+
+}
+.swiper-button-prev{
+  position: absolute;
+  left: -20px;
+  z-index: 99;
+}

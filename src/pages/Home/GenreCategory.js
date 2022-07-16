@@ -1,18 +1,17 @@
-import { Img, Stack, Text } from "@chakra-ui/react"
-import useMovieData from "hooks/useMovieData"
+import { Img, Stack, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react"
+import { fetchMovieByCategory } from "services/fetchMovieByCategory";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+function GenreCategory( { title = "", genreId = 28 } = {}) {
 
+    const [categoryMovies, setCategoryMovies] = useState([])
 
-
-function Category({ title = "", keyword = "" } = {}) {
-
-    const movies = useMovieData({ keyword })
+    useEffect(() => {
+        fetchMovieByCategory(genreId)
+            .then(movies => setCategoryMovies(movies))
+    }, [])
 
     return (
         <Stack height='325px' p='2rem 2.5rem' justify='center'>
@@ -25,10 +24,10 @@ function Category({ title = "", keyword = "" } = {}) {
                     navigation={true}
                     modules={[Navigation, Thumbs]}
                     onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console .log(swiper)}
+                    onSwiper={(swiper) => console.log(swiper)}
                 >
                     {
-                        movies.map(movie => {
+                        categoryMovies.map(movie => {
                             return (
                                 <SwiperSlide key={movie.id} >
                                     <Stack flexShrink='0'>
@@ -44,4 +43,4 @@ function Category({ title = "", keyword = "" } = {}) {
     )
 }
 
-export default Category
+export default GenreCategory

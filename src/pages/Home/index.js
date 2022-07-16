@@ -4,6 +4,8 @@ import MoviesCategories from "./MoviesCategories";
 
 function Home() {
     
+
+
     return (
         <>
             <Navbar />

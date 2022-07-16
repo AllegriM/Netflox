@@ -1,19 +1,21 @@
 import { API_URL, API_KEY } from "data/API_DATA"
 
+
+
+export const specificMovieData = (apiResponse) => {
+    if (Array.isArray(apiResponse)) {
+        const movies = apiResponse.map(movie => {
+            const { poster_path, backdrop_path } = movie;
+            const url_image_poster = `https://image.tmdb.org/t/p/original/${poster_path}`
+            const url_image_backdrop = `https://image.tmdb.org/t/p/original/${backdrop_path}`
+            return { ...movie, url_image_poster, url_image_backdrop }
+        })
+        return movies
+    }
+}
+
 async function fetchMovies( keyword ) {
     // Desestructuring data
-
-    const specificMovieData = (apiResponse) => {
-        if (Array.isArray(apiResponse)) {
-            const movies = apiResponse.map(movie => {
-                const { poster_path, backdrop_path } = movie;
-                const url_image_poster = `https://image.tmdb.org/t/p/original/${poster_path}`
-                const url_image_backdrop = `https://image.tmdb.org/t/p/original/${backdrop_path}`
-                return { ...movie, url_image_poster, url_image_backdrop }
-            })
-            return movies
-        }
-    }
     
     // Getting data from the MOVIES API
 

@@ -1,11 +1,12 @@
-import { Stack, Text } from "@chakra-ui/react"
+import { Button, Stack, Text } from "@chakra-ui/react"
 import useMovieData from "hooks/useMovieData"
+import { FaPlay, FaInfoCircle } from 'react-icons/fa';
+
 
 function BannerMainMovie() {
 
     const movies = useMovieData({ keyword: "popular" })
     const random = Math.floor(Math.random() * movies.length - 1 )
-    console.log()
     
     return (
         <Stack className="movie-banner" position='absolute' top='0' maxH='90%' h='100%' zIndex='-1' w='100%'>
@@ -14,6 +15,10 @@ function BannerMainMovie() {
                 <Stack position='absolute' top='50%' p='0 5rem'>
                     <Text fontSize='2.5rem' color='white' textAlign='left' wordBreak='none'>{movies[random]?.title}</Text>
                     <Text fontSize='1.3rem' color='white' textAlign='left' width='35vw'>{movies[random]?.overview.split(" ").length > 24 ? `${movies[random]?.overview.split(" ").slice(0,24).join(" ")} ...` : movies[random]?.overview}</Text>
+                    <Stack direction='row' gap='5px'>
+                        <Button zIndex='2' p='1.5rem 3rem' bg='white' color='black' fontSize='1.2rem'><FaPlay className="button-banner-icons" size='1.4em'/>Reproducir</Button>
+                        <Button zIndex='2' p='1.5rem 3rem' bg='rgba(109, 109, 110, 0.7)' color='white' fontSize='1.2rem'><FaInfoCircle className="button-banner-icons" size='1.4em'/>Más Información</Button>
+                    </Stack>
                 </Stack>
             </Stack>
         </Stack>
