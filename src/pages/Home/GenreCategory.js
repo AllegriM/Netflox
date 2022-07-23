@@ -1,10 +1,11 @@
 import { Img, Stack, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react"
-import { fetchMovieByCategory } from "services/fetchMovieByCategory";
+import { fetchMovieByCategory } from "services/fetchMoviesByCategory";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs } from 'swiper';
+import { Link } from "react-router-dom";
 
-function GenreCategory( { title = "", genreId = 28 } = {}) {
+function GenreCategory({ title = "", genreId = 28 } = {}) {
 
     const [categoryMovies, setCategoryMovies] = useState([])
 
@@ -29,10 +30,12 @@ function GenreCategory( { title = "", genreId = 28 } = {}) {
                     {
                         categoryMovies.map(movie => {
                             return (
-                                <SwiperSlide key={movie.id} >
-                                    <Stack flexShrink='0'>
-                                        <Img className="category-img" src={movie.url_image_backdrop} position='relative' />
-                                    </Stack>
+                                <SwiperSlide key={movie.id}>
+                                    <Link to={`/movie/${movie.id}`}>
+                                        <Stack flexShrink='0'>
+                                            <Img className="category-img" src={movie.url_image_backdrop} position='relative' />
+                                        </Stack>
+                                    </Link>
                                 </SwiperSlide>
                             )
                         })

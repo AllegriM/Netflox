@@ -1,12 +1,15 @@
 import { Avatar, Button, ListItem, Menu, MenuButton, MenuItem, MenuList, Stack, Text, UnorderedList } from "@chakra-ui/react"
 import Icon from "components/ui/Icon"
-import { FaSearch, FaBell } from 'react-icons/fa'
+import { FaSearch } from 'react-icons/fa'
 import { BsFillCaretDownFill } from "react-icons/bs"
 import { theme } from "theme"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "context/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 function Navbar() {
+
+    const navigate = useNavigate()
 
     const [openSearchInput, setOpenSearchInput] = useState(false)
     const { logOut } = useContext(AuthContext)
@@ -14,22 +17,24 @@ function Navbar() {
     const [show, setShow] = useState(false)
 
     const hideNavBar = () => {
-        if (window.scrollY > 100){
+        if (window.scrollY > 50) {
             setShow(true)
-        }else{
+        } else {
             setShow(false)
-        }   
+        }
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         window.addEventListener("scroll", hideNavBar)
         return () => window.addEventListener("scroll", hideNavBar)
-    },[show])
+    }, [show])
 
     return (
         <nav className={`nav-bar ${show ? 'hide-navbar' : ''}`}>
             <Stack className="nav-left" direction='row' align='center'>
-                <Icon />
+                <Button onClick={() => navigate('/home')} variant="unstyled">
+                    <Icon />
+                </Button>
                 <Menu>
                     <MenuButton className='responsive-categories' as={Button} bg='none' _hover={{ bg: "none" }} _active={{ bg: "none" }} p='0'>
                         <Stack direction='row' align='center' cursor='pointer'>
@@ -82,18 +87,16 @@ function Navbar() {
                 </Stack>
             </Stack>
             <Stack direction='row' gap='10px' align='center'>
-                <Stack className="nav-search" w='250px' h='30px'>
+                <Stack className="nav-search" h='30px'>
                     <FaSearch onClick={() => setOpenSearchInput(!openSearchInput)} className={`icon-search ${openSearchInput ? 'open-icon' : ''}`} size={"1.25em"} cursor='pointer' style={{ transform: 'rotate(-10deg)' }} />
-                    <input placeholder="Títulos, personas, géneros" className={`input-search ${openSearchInput ? 'open-input' : ''}`} type='text'/>
+                    <input placeholder="Títulos, personas, géneros" className={`input-search ${openSearchInput ? 'open-input' : ''}`} type='text' />
                 </Stack>
-                <Text >Niños</Text>
-                <FaBell size={"1.25em"} cursor='pointer' />
                 <Stack direction='row' align='center' cursor='pointer'>
                     <Menu className='menu'>
-                        <MenuButton className="avatar-button" as={Button} bg='none' _hover={{ bg: "none" }} _active={{ bg: "none" }}> 
+                        <MenuButton className="avatar-button" as={Button} bg='none' _hover={{ bg: "none" }} _active={{ bg: "none" }}>
                             <Stack direction='row' align='center' cursor='pointer'>
                                 <Avatar size='sm' name='Kent Dodds' src='https://bit.ly/kent-c-dodds' />{' '}
-                                <BsFillCaretDownFill className="avatar-arrow" size='.75em'/>
+                                <BsFillCaretDownFill className="avatar-arrow" size='.75em' />
                             </Stack>
                         </MenuButton>
                         <MenuList bg={theme.colors.black}>

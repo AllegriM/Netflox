@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Link } from "react-router-dom";
 
 
 
@@ -24,16 +25,16 @@ function Category({ title = "", keyword = "" } = {}) {
                     slidesPerView={5}
                     navigation={true}
                     modules={[Navigation, Thumbs]}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console .log(swiper)}
                 >
                     {
                         movies.map(movie => {
                             return (
-                                <SwiperSlide key={movie.id} >
-                                    <Stack flexShrink='0'>
-                                        <Img className="category-img" src={movie.url_image_backdrop} position='relative' />
-                                    </Stack>
+                                <SwiperSlide key={movie.id}>
+                                    <Link to={`/movie/${movie.id}`}>
+                                            <Stack flexShrink='0'>
+                                                <Img className="category-img" src={movie.url_image_backdrop} position='relative' />
+                                            </Stack>
+                                    </Link>
                                 </SwiperSlide>
                             )
                         })

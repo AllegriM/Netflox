@@ -1,9 +1,8 @@
-import { Button, Text } from "@chakra-ui/react"
+import { Text } from "@chakra-ui/react"
 import { useState } from "react"
 import { AuthContext } from "context/AuthContext"
 import { useContext } from "react"
 import { useForm  } from "react-hook-form"
-import { theme } from "theme"
 import { ErrorMessage } from "@hookform/error-message"
 
 function RegisterFormFormik( {displayLogin} ) {
@@ -63,7 +62,7 @@ function RegisterFormFormik( {displayLogin} ) {
                 <ErrorMessage name='password' errors={errors} as="small" />
                 <button disabled={isSubmitting} className="form-btns">Crear cuenta</button>
             </form>
-            <Button onClick={ ()=> displayLogin(true) } mt='1em' bg={theme.colors.red[50]} w='100%' py='1.5rem'>Ir al inicio</Button>
+            <button onClick={ ()=> displayLogin(true) } className="form-btns">Ir al inicio</button>
         </>
     )
 }
