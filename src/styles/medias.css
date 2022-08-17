@@ -1,0 +1,306 @@
+    /* 
+    < 20rem
+    30rem
+    37.5rem
+    48rem
+    56.25rem
+    64 rem
+    > 75 rem
+    */
+
+    .responsive-categories {
+        display: none !important;
+    }
+
+    /* 320px to 480px */
+    @media screen and (min-width: 20rem) and (max-width: 30rem) {
+
+        /* Nav bar */
+        .nav-bar {
+            padding: 0;
+        }
+
+        .icon-svg {
+            width: 45px !important;
+            height: 45px !important;
+            padding: 0 6px 5px 10px !important;
+        }
+
+        .nav-left button {
+            font-size: 16px !important;
+        }
+
+        .nav-bar ul {
+            display: none
+        }
+
+        /* Movie Banner Movie */
+        .movie-banner-data {
+            padding: 0 1rem !important;
+            top: 50% !important;
+        }
+
+        .movie-banner-data button {
+            padding: 0;
+        }
+
+        .movie-banner-data button {
+            font-size: 1rem;
+            padding: 0 1rem;
+        }
+
+        .movie-banner-description {
+            display: none;
+        }
+
+        /* Movie Home */
+        .movie-list-container {
+            padding: 0 !important;
+        }
+
+        /* Movie Detail */
+        .movie-detail-bigContainer {
+            max-width: 100% !important;
+        }
+
+        .movie-detail-container {
+            flex-wrap: wrap !important;
+        }
+
+        .movie-detail-container>div {
+            width: 100% !important;
+        }
+    }
+
+    /* 480px to 768px */
+    @media screen and (min-width: 30rem) {
+        /* Nav bar */
+        .nav-bar{
+            padding: .55rem 0;
+        }
+
+        .icon-svg {
+            width: 55px !important;
+            height: 55px !important;
+            padding: 0 6px 15px 10px !important;
+        }
+
+        .icon-search{
+            font-size: 1.15rem;
+        }
+
+        .nav-left button {
+            font-size: 16px !important;
+        }
+
+        .nav-bar ul {
+            display: none;
+        }
+
+        /* Movie Banner Movie */
+        .movie-banner-data {
+            padding: 0 2rem !important;
+            top: 60% !important;
+        }
+
+        .movie-banner-data button {
+            padding: 0;
+
+        }
+
+        .movie-banner-data button {
+            font-size: 1rem;
+            padding: 0 1rem;
+        }
+
+        .movie-banner-description {
+            display: none;
+        }
+
+        /* Movie Home */
+        .movie-list-container {
+            padding: 0 !important;
+        }
+
+        /* Movie Detail */
+        .movie-detail-bigContainer {
+            max-width: 80% !important;
+        }
+
+        .movie-detail-container {
+            flex-wrap: wrap !important;
+        }
+
+        .movie-detail-container>div {
+            width: 100% !important;
+        }
+    }
+
+    /* 768px to 900px */
+    @media screen and (min-width: 48rem) {
+        .nav-bar{
+            padding: .75rem 0;
+        }
+        .nav-bar ul {
+            display: none
+        }
+
+        /* Movie Banner Movie */
+
+        /* Movie Detail */
+        .movie-detail-bigContainer {
+            max-width: 60% !important;
+        }
+
+        .movie-detail-container {
+            flex-wrap: wrap !important;
+        }
+
+        .movie-detail-container>div {
+            width: 100% !important;
+        }
+    }
+
+    /* 900px to 1024px */
+    @media screen and (min-width: 56.25rem) {
+        .nav-bar ul {
+            display: none
+        }
+
+        .icon-svg {
+            width: 55px !important;
+            height: 50px !important;
+            padding: 0 6px 10px 16px !important;
+        }
+
+        /* Movie Banner Movie */
+        .movie-banner-data {
+            top: 60% !important;
+        }
+
+        .movie-banner-description {
+            display: none;
+        }
+
+        /* Movie Detail */
+        .movie-detail-bigContainer {
+            max-width: 50% !important;
+        }
+
+        .movie-detail-container {
+            flex-wrap: wrap !important;
+        }
+
+        .movie-detail-container>div {
+            width: 100% !important;
+        }
+
+    }
+
+    /* 1024px to 1200px */
+    @media screen and (min-width: 64rem) and (max-width: 75rem) {
+        .nav-bar ul {
+            font-size: .85rem;
+        }
+
+        /* Movie Banner Movie */
+        .movie-banner-data {
+            top: 40% !important;
+        }
+
+        .movie-banner-description {
+            display: block;
+        }
+
+        /* Movie Detail */
+        .movie-detail-container>div {
+            width: 50% !important;
+        }
+
+        .movie-detail-container {
+            flex-wrap: nowrap !important;
+        }
+    }
+
+    /* 1200px to 1500px */
+    @media screen and (min-width: 64rem)  and (max-width: 90rem) {
+        .nav-bar{
+            padding: 1rem 0;
+        }
+        .nav-bar ul {
+            display: none
+        }
+
+        /* Movie Banner Movie */
+
+        /* Movie Detail */
+        .movie-detail-bigContainer {
+            max-width: 60% !important;
+        }
+
+        .movie-detail-container {
+            flex-wrap: wrap !important;
+        }
+
+        .movie-detail-container>div {
+            width: 100% !important;
+        }
+    }
+
+    /* > 1200px */
+    @media screen and (min-width: 90rem) {
+
+        /* Nav bar */
+        .nav-bar {
+            padding: 1rem 2rem;
+        }
+
+        .icon-search {
+            font-size: 1.05rem;
+        }
+
+        .icon-svg {
+            width: 60px !important;
+            height: 50px !important;
+            padding: 0 6px 10px 16px !important;
+        }
+
+        .nav-bar ul {
+            font-size: 1rem;
+        }
+
+        /* Movie Banner Movie */
+        .movie-banner-data {
+            top: 50% !important;
+        }
+
+        .movie-banner-data {
+            top: 50% !important;
+        }
+
+        .movie-banner-description {
+            display: block;
+        }
+
+        .movie-banner-data h2 {
+            font-size: 4rem;
+        }
+
+        .movie-banner-data p {
+            font-size: 1.2rem;
+        }
+
+        .movie-banner-data button {
+            font-size: 1.4rem;
+            padding: 1.5rem 1rem;
+        }
+
+        /* Movie Detail */
+        .movie-detail-container>div {
+            width: 50% !important;
+        }
+
+        .movie-detail-container {
+            flex-wrap: nowrap !important;
+        }
+    }
