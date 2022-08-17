@@ -24,9 +24,7 @@ function AuthContextProvider({ children }) {
     const signUp = async (email, password, username) => {
         try {
             await createUserWithEmailAndPassword(auth, email, password, username)
-            console.log(`El usuario de ${username} va a ser creado!`)
         } catch (error) {
-            console.log(error.code)
             if (error.code === "auth/invalid-email") return setErrorMessage("Ese mail no es valido")
             if (error.code === "auth/email-already-in-use") return setErrorMessage("Una cuenta con ese mail ya existe. Intente cambiando el mail.")
             if (error.code === "auth/invalid-email") return setErrorMessage()
