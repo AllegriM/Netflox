@@ -16,7 +16,6 @@ function LoginFormFormik({ displayLogin }) {
         setIsSubmitting(false)
         logIn(values.email, values.password);
     }
-    console.log(errors)
     return (
         <>
             <Text textAlign='start' fontSize={"4xl"} fontWeight={'semibold'}>Inicia sesión</Text>

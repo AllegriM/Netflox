@@ -39,7 +39,6 @@ function AuthContextProvider({ children }) {
             localStorage.setItem("user", JSON.stringify(auth.currentUser))
             navigate("/home")
         } catch (error) {
-            console.log(error.code)
             if (error.code === "auth/invalid-email") return setErrorMessage("No podemos encontrar una cuenta con esta dirección de email. Reinténtalo o crea una cuenta nueva.")
             if (error.code === "auth/wrong-password") return setErrorMessage("Contraseña incorrecta. Reinténtalo o crea una contraseña nueva.")
         }
@@ -53,11 +52,9 @@ function AuthContextProvider({ children }) {
                     // This gives you a Google Access Token. You can use it to access the Google API.
                     const credential = GoogleAuthProvider.credentialFromResult(result);
                     const token = credential.accessToken;
-                    console.log(token)
                     // The signed-in user info.
                     const user = result.user;
                     localStorage.setItem("user", JSON.stringify(auth.currentUser))
-                    console.log(user)
                     // ...
                     if(user){
                         navigate('/home')

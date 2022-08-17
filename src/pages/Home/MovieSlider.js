@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 
 
 function MovieSlider({title , movieList}) {
-    console.log(movieList)
     return (
         <Stack className="movie-list-container" height='270px' p='2rem 2.5rem' justify='center'>
             <Stack h='50px'>

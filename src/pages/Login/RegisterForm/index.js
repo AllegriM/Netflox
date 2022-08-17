@@ -16,7 +16,6 @@ function RegisterFormFormik({ displayLogin }) {
         setIsSubmitting(false)
         signUp(values.email, values.password, values.FirstName);
     }
-    console.log(errors)
     return (
         <Stack h='400px' w='314px' borderRadius={6}>
             <Text textAlign='start' fontSize={"4xl"} fontWeight={'semibold'}>Regístrate</Text>
